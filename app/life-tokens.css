@@ -1,0 +1,481 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --life-color-bg-fill-accent1: #25837e; /* Use for fill backgrounds on elements that need accentuation. */
+  --life-color-bg-fill-accent1-active: #0f3937; /* The active state fill background color for elements that need accentuation. */
+  --life-color-bg-fill-accent1-hover: #145653; /* The hover state fill background color for elements that need accentuation. */
+  --life-color-bg-fill-accent2: #eac785; /* Use for fill backgrounds on elements that need accentuation and differentiation from the Accent 1 color. */
+  --life-color-bg-fill-accent2-active: #d6ad61; /* The active state fill background color for elements that need accentuation and differentiation from the Accent 1 color. */
+  --life-color-bg-fill-accent2-hover: #f8e2bf; /* The hover state fill background color for elements that need accentuation and differentiation from the Accent 1 color. */
+  --life-color-bg-fill-active: #163746; /* The default pressed state fill background color. */
+  --life-color-bg-fill-critical: #dc3449; /* Use for fill backgrounds communicating critical information, like destructive actions. */
+  --life-color-bg-fill-critical-active: #6b0613; /* The active state fill background color for critical information. */
+  --life-color-bg-fill-critical-hover: #9c0d1d; /* The hover state fill background color for critical information. */
+  --life-color-bg-fill-default: #215369; /* The default background color for elements in the foreground of the UI with a small surface area. */
+  --life-color-bg-fill-disabled: #e5e5e5; /* The disabled state fill background color for elements with a small surface area, like buttons. */
+  --life-color-bg-fill-hover: #276d8b; /* The default hover state fill background color. */
+  --life-color-bg-fill-inverse: #f2f2f2; /* The default fill background color for components on a dark background. */
+  --life-color-bg-fill-inverse-active: #7fbcd7; /* The inverse pressed state color for background fills. */
+  --life-color-bg-fill-inverse-disabled: #4d4d4d; /* The disabled state fill background color for components on a dark background. */
+  --life-color-bg-fill-inverse-hover: #a9d3e5; /* The inverse hover state color for background fills. */
+  --life-color-bg-fill-positive: #14892f; /* Use for fill backgrounds communicating positive information. */
+  --life-color-bg-fill-positive-active: #003d0e; /* The active state fill background color for positive information. */
+  --life-color-bg-fill-positive-hover: #025a15; /* The hover state fill background color for positive information. */
+  --life-color-bg-fill-primary: #2e7fa1; /* The fill background color for elements with the highest level of importance, like primary buttons. */
+  --life-color-bg-fill-primary-active: #163746; /* The active state fill background color for elements with the highest level of importance. */
+  --life-color-bg-fill-primary-hover: #215369; /* The hover state fill background color for elements with the highest level of importance. */
+  --life-color-bg-fill-samaritan-gradient-0: #af50af; /* Use for fill backgrounds on elements related to AI. */
+  --life-color-bg-fill-samaritan-gradient-100: #5f73ba; /* Use for fill backgrounds on elements related to AI. */
+  --life-color-bg-fill-selected: #2e7fa1; /* Use for fill backgrounds on selected elements. */
+  --life-color-bg-fill-warning: #e97116; /* Use for fill backgrounds communicating caution. */
+  --life-color-bg-fill-warning-active: #f4a162; /* The active state fill background color for warnings. */
+  --life-color-bg-fill-warning-hover: #f8c096; /* The hover state fill background color for warnings. */
+  --life-color-bg-overlay: rgba(26, 26, 26, 0.25); /* Use for overlays, for example behind modals. */
+  --life-color-bg-overlay-dark: rgba(26, 26, 26, 0.5); /* Use for overlays, for example behind modals. */
+  --life-color-bg-overlay-darker: rgba(26, 26, 26, 0.75); /* Use for overlays, for example behind modals. */
+  --life-color-bg-surface-accent1: #e4f6f6; /* Use for surfaces that need accentuation. */
+  --life-color-bg-surface-accent1-active: #e4f6f6; /* The active state color for surfaces that need accentuation. */
+  --life-color-bg-surface-accent1-hover: #edfcfb; /* The hover state color for surfaces that need accentuation. */
+  --life-color-bg-surface-accent2: #f8e2bf; /* Use for surfaces that need accentuation and differentiation from the Accent 1 color. */
+  --life-color-bg-surface-accent2-active: #fdf0de; /* The active state color for surfaces that need accentuation. */
+  --life-color-bg-surface-accent2-hover: #fffaee; /* The hover state color for surfaces that need accentuation. */
+  --life-color-bg-surface-active: #d4e9f2; /* The active state color for surfaces. */
+  --life-color-bg-surface-critical: #fddee2; /* Use for backgrounds communicating critical information, like banners. */
+  --life-color-bg-surface-critical-active: #feecf1; /* The active state color for surfaces communicating critical information. */
+  --life-color-bg-surface-critical-hover: #fef5f7; /* The hover state color for surfaces communicating critical information. */
+  --life-color-bg-surface-default: #ffffff; /* The default background color for UI elements. */
+  --life-color-bg-surface-disabled: #f2f2f2; /* The disabled state surface color. */
+  --life-color-bg-surface-high: #ffffff; /* The default background color for high-level surfaces (visible in Dark mode). */
+  --life-color-bg-surface-hover: #f1fbfe; /* The hover state color for surfaces. */
+  --life-color-bg-surface-inverse: #333333; /* The background color for inversed components, like the footer. */
+  --life-color-bg-surface-inverse-active: #0f2934; /* The active state color for surfaces on a dark background. */
+  --life-color-bg-surface-inverse-hover: #163746; /* The hover state color for surfaces on a dark background. */
+  --life-color-bg-surface-inverse-selected: #4d4d4d; /* The selected state color for surfaces on a dark background. */
+  --life-color-bg-surface-low: #ffffff; /* The background color used for the base canvas. */
+  --life-color-bg-surface-low-opacity-0: rgba(255, 255, 255, 0);
+  --life-color-bg-surface-low-opacity-50: rgba(255, 255, 255, 0.5);
+  --life-color-bg-surface-low-opacity-75: rgba(255, 255, 255, 0.75);
+  --life-color-bg-surface-low-subtle: #f2f2f2; /* Used as a dimmed down background color for the base canvas, like behind dashboards (visible in Light mode). */
+  --life-color-bg-surface-low-subtle-opacity-0: rgba(250, 250, 250, 0);
+  --life-color-bg-surface-low-subtle-opacity-50: rgba(250, 250, 250, 0.5);
+  --life-color-bg-surface-low-subtle-opacity-75: rgba(250, 250, 250, 0.75);
+  --life-color-bg-surface-low-subtle-opacity-100: #f2f2f2;
+  --life-color-bg-surface-neutral: #e5e5e5; /* The surface background color for elements with a neutral message. */
+  --life-color-bg-surface-opacity-0: rgba(255, 255, 255, 0);
+  --life-color-bg-surface-opacity-50: rgba(255, 255, 255, 0.5);
+  --life-color-bg-surface-opacity-75: rgba(255, 255, 255, 0.75);
+  --life-color-bg-surface-positive: #cceed2; /* Use for backgrounds communicating positive information, like banners. */
+  --life-color-bg-surface-positive-active: #e2f8e4; /* The active state color for surfaces communicating positive information. */
+  --life-color-bg-surface-positive-hover: #ecfef1; /* The hover state color for surfaces communicating positive information. */
+  --life-color-bg-surface-primary: #d4e9f2; /* The surface background color for elements with the highest level of importance. */
+  --life-color-bg-surface-primary-active: #e3f5fc; /* The active state color for surfaces with the highest level of importance. */
+  --life-color-bg-surface-primary-hover: #f1fbfe; /* The hover state color for surfaces with the highest level of importance. */
+  --life-color-bg-surface-samaritan-gradient-0: #fbdbfb;
+  --life-color-bg-surface-samaritan-gradient-100: #e0e6fa;
+  --life-color-bg-surface-selected: #f2f2f2; /* The selected state color for surfaces. */
+  --life-color-bg-surface-subtle: #fafafa; /* The background color for UI elements that need a subtle emphasis. */
+  --life-color-bg-surface-warning: #fce3cf; /* Use for backgrounds communicating caution, like banners. */
+  --life-color-bg-surface-warning-active: #fdf0e7; /* The active state color for surfaces communicating caution. */
+  --life-color-bg-surface-warning-hover: #fef7f1; /* The hover state color for surfaces communicating caution. */
+  --life-color-border-accent1: #25837e; /* Use for borders on elements that need accentuation. */
+  --life-color-border-accent2: #b58e45; /* Use for borders on elements that need a distinct accentuation. */
+  --life-color-border-active: #163746; /* The default active state border color. */
+  --life-color-border-critical: #dc3449; /* Use for borders communicating critical information. */
+  --life-color-border-critical-active: #6b0613; /* The pressed state color for borders communicating critical information. */
+  --life-color-border-critical-hover: #9c0d1d; /* The hover state color for borders communicating critical information. */
+  --life-color-border-default: #949494; /* The default border color. */
+  --life-color-border-disabled: #e5e5e5; /* Border color for elements in disabled state. */
+  --life-color-border-focus: #1a1a1a; /* Color for the focus ring on any element in focused state. */
+  --life-color-border-hover: #215369; /* The default hover state border color. */
+  --life-color-border-inverse: #e5e5e5; /* Use for borders on a dark background. */
+  --life-color-border-inverse-active: #7fbcd7; /* The active state color for borders on a dark background. */
+  --life-color-border-inverse-disabled: #666666; /* Border color for elements in disabled state on a dark background. */
+  --life-color-border-inverse-hover: #a9d3e5; /* The hover state color for borders on a dark background. */
+  --life-color-border-positive: #37a851; /* Use for borders communicating positive information. */
+  --life-color-border-positive-active: #003d0e; /* The pressed state color for borders on elements communicating positive information. */
+  --life-color-border-positive-hover: #025a15; /* The hover state color for borders on elements communicating positive information. */
+  --life-color-border-primary: #2e7fa1; /* Use for borders on important components. */
+  --life-color-border-primary-active: #163746; /* The pressed state color for borders on important components. */
+  --life-color-border-primary-hover: #215369; /* The hover state color for borders on important components. */
+  --life-color-border-samaritan-gradient-0: #af50af; /* Use for fill backgrounds on elements related to AI. */
+  --life-color-border-samaritan-gradient-100: #5f73ba; /* Use for fill backgrounds on elements related to AI. */
+  --life-color-border-selected: #2e7fa1; /* Use for borders on selected elements. */
+  --life-color-border-subtle: #cccccc; /* The border color for elements that need a subtle emphasis. */
+  --life-color-border-warning: #e97116; /* Use for borders communicating caution. */
+  --life-color-border-warning-active: #572600; /* The pressed state color for borders on elements communicating caution. */
+  --life-color-border-warning-hover: #803700; /* The hover state color for borders on elements communicating caution. */
+  --life-color-category-1: #5062a5;
+  --life-color-category-2: #b58e45;
+  --life-color-category-3: #23716d;
+  --life-color-category-4: #d87a63;
+  --life-color-category-5: #795993;
+  --life-color-category-6: #7d9e5c;
+  --life-color-category-7: #9b4b73;
+  --life-color-category-8: #519dbd;
+  --life-color-category-als: #cf222b;
+  --life-color-category-heartsaver: #102e67;
+  --life-color-category-nrp-indigo: #00247f;
+  --life-color-category-nrp-teal: #237e74;
+  --life-color-category-pals: #5f249f;
+  --life-color-category-provider: #005eb8;
+  --life-color-category-responder: #0f7f93;
+  --life-color-category-rqi-nrp: #094847;
+  --life-color-category-rqi-t: #ffc72c;
+  --life-color-cpr-critical: #fc5a6f;
+  --life-color-cpr-inactive: #215369;
+  --life-color-cpr-indicator: #fafafa;
+  --life-color-cpr-positive: #37a851;
+  --life-color-cpr-warning: #e97116;
+  --life-color-icon-accent1: #25837e; /* Use for standalone icons that needs accentuation. */
+  --life-color-icon-accent2: #92702f; /* Use for standalone icons that needs a distinct accentuation. */
+  --life-color-icon-active: #163746; /* The default pressed state color for standalone icons on interactive elements. */
+  --life-color-icon-critical: #dc3449; /* Use for standalone icons communicating critical information. */
+  --life-color-icon-critical-active: #6b0613; /* The pressed state color for standalone icons communicating critical information. */
+  --life-color-icon-critical-hover: #9c0d1d; /* The hover state standalone icons color for critical information. */
+  --life-color-icon-default: #333333; /* The default icon color. Use for standalone icons and icon-only buttons. */
+  --life-color-icon-disabled: #b3b3b3; /* Use for standalone icons in disabled state. */
+  --life-color-icon-hover: #215369; /* The default hover state color for standalone icons on interactive elements. */
+  --life-color-icon-inverse: #e5e5e5; /* Use for standalone icons on an inverse surface background. */
+  --life-color-icon-inverse-active: #7fbcd7; /* The active state color for standalone icons on a dark background. */
+  --life-color-icon-inverse-disabled: #666666; /* Use for standalone icons in disabled state on an inverse background. */
+  --life-color-icon-inverse-hover: #a9d3e5; /* The hover state color for standalone icons on a dark background. */
+  --life-color-icon-on-fill-accent1: #ffffff; /* Use for text on a fill-accent1 background. */
+  --life-color-icon-on-fill-accent2: #604920; /* Use for standalone icons on a fill-accent2 background. */
+  --life-color-icon-on-fill-critical: #ffffff; /* Use for standalone icons on a fill-critical background. */
+  --life-color-icon-on-fill-default: #fafafa; /* Use for standalone icons on a default fill background. */
+  --life-color-icon-on-fill-disabled: #b3b3b3; /* Use for standalone icons in disabled state on fill backgrounds. */
+  --life-color-icon-on-fill-inverse: #333333; /* Use for standalone icons on a fill-inverse background. */
+  --life-color-icon-on-fill-inverse-disabled: #767676; /* Use for standalone icons on a fill-inverse-disabled background. */
+  --life-color-icon-on-fill-positive: #ffffff; /* Use for standalone icons on a fill-positive background. */
+  --life-color-icon-on-fill-primary: #ffffff; /* Use for standalone icons on a fill-primary background. */
+  --life-color-icon-on-fill-samaritan: #ffffff; /* Use for icons on a fill-samaritan background. */
+  --life-color-icon-on-fill-warning: #ffffff; /* Use for standalone icons on a fill-warning background. */
+  --life-color-icon-positive: #14892f; /* Use for standalone icons communicating positive information. */
+  --life-color-icon-positive-active: #003d0e; /* The pressed state color for standalone icons communicating positive information. */
+  --life-color-icon-positive-hover: #025a15; /* The hover state color for standalone icons communicating positive information. */
+  --life-color-icon-primary: #2e7fa1; /* Use for standalone icons on prominent components. */
+  --life-color-icon-primary-active: #163746; /* The pressed state color for standalone icons on prominent components. */
+  --life-color-icon-primary-hover: #215369; /* The hover state color for standalone icons on prominent components. */
+  --life-color-icon-samaritan: #9a429a; /* Use for icons related to AI. */
+  --life-color-icon-selected: #2e7fa1; /* The color for selected state for standalone icons */
+  --life-color-icon-subtle: #666666; /* The subtle color for standalone icons. */
+  --life-color-icon-warning: #c45402; /* Use for standalone icons communicating caution. */
+  --life-color-icon-warning-active: #572600; /* The pressed state color for standalone icons communicating caution. */
+  --life-color-icon-warning-hover: #803700; /* The hover state color for standalone icons communicating caution. */
+  --life-color-quiz-button-bg-fill-active: #3ea39e; /* The active state color for the Quiz button fill area. */
+  --life-color-quiz-button-bg-fill-default: #c8eeec; /* The color for the Quiz button fill area. */
+  --life-color-quiz-button-bg-fill-hover: #6bc2be; /* The hover state color for the Quiz button fill area. */
+  --life-color-quiz-button-bg-fill-selected: #98d8d5; /* The selected state color for the Quiz button fill area. */
+  --life-color-quiz-button-bg-surface-active: #98d8d5; /* The active state color for the Quiz button surface. */
+  --life-color-quiz-button-bg-surface-default: #e4f6f6; /* The surface color for the Quiz button. */
+  --life-color-quiz-button-bg-surface-hover: #c8eeec; /* The hover state color for the Quiz button surface. */
+  --life-color-quiz-button-bg-surface-selected: #c8eeec; /* The selected state color for the Quiz button surface. */
+  --life-color-quiz-button-icon-on-fill: #333333; /* The color for the icon used in the Quiz button. */
+  --life-color-text-accent1: #23716d; /* Use for text that needs accentuation. */
+  --life-color-text-accent2: #806128; /* Use for text that needs a distinct accentuation. */
+  --life-color-text-active: #163746; /* The default pressed state color for text on interactive elements. */
+  --life-color-text-critical: #c32238; /* Use for text communicating critical information, like input errors or destructive actions. */
+  --life-color-text-critical-active: #6b0613; /* The pressed state text color for critical information. */
+  --life-color-text-critical-hover: #9c0d1d; /* The hover state text color for critical information. */
+  --life-color-text-default: #1a1a1a; /* The default text color. */
+  --life-color-text-disabled: #b3b3b3; /* Use for text in disabled state. */
+  --life-color-text-hover: #215369; /* The default hover state color for text on interactive elements. */
+  --life-color-text-inverse: #fafafa; /* Use for text on an inverse surface background. */
+  --life-color-text-inverse-active: #7fbcd7; /* The active state color for text on a dark background. */
+  --life-color-text-inverse-disabled: #666666; /* Use for text in disabled state on an inverse background. */
+  --life-color-text-inverse-hover: #a9d3e5; /* The hover state color for text on a dark background. */
+  --life-color-text-link: #276d8b; /* The default color for links. */
+  --life-color-text-link-accent1: #145653; /* The color for links on elements that need accentuation. */
+  --life-color-text-link-accent1-active: #0c2a28; /* The pressed state color for links on elements that need accentuation. */
+  --life-color-text-link-accent1-hover: #0f3937; /* The hover state color for links on elements that need accentuation. */
+  --life-color-text-link-accent2: #604920; /* The color for links on elements that need a distinct accentuation. */
+  --life-color-text-link-accent2-active: #2f240f; /* The pressed state link color for elements that need a distinct accentuation. */
+  --life-color-text-link-accent2-hover: #42300f; /* The hover state link color for elements that need a distinct accentuation. */
+  --life-color-text-link-active: #163746; /* The pressed state color for links. */
+  --life-color-text-link-critical: #9c0d1d; /* The color for links on elements that communicate critical information. */
+  --life-color-text-link-critical-active: #461117; /* The pressed state link color for critical information. */
+  --life-color-text-link-critical-hover: #6b0613; /* The hover state link color for critical information. */
+  --life-color-text-link-hover: #215369; /* The hover state color for links. */
+  --life-color-text-link-inverse: #ffffff; /* The color for links on an inverse surface background. */
+  --life-color-text-link-positive: #025a15; /* The color for links on elements that communicate positive information. */
+  --life-color-text-link-positive-active: #062c0f; /* The pressed state link color for positive information. */
+  --life-color-text-link-positive-hover: #003d0e; /* The hover state link color for positive information. */
+  --life-color-text-link-primary: #215369; /* The color for links on elements with a high level of importance. */
+  --life-color-text-link-primary-active: #0f2934; /* The pressed state color for links with a high level of importance. */
+  --life-color-text-link-primary-hover: #163746; /* The hover state color for links with a high level of importance. */
+  --life-color-text-link-samaritan: #773177; /* The color for links on elements related to AI. */
+  --life-color-text-link-samaritan-active: #401240; /* The pressed state link color for elements related to AI. */
+  --life-color-text-link-samaritan-hover: #521e52; /* The hover state link color for elements related to AI. */
+  --life-color-text-link-warning: #803700; /* The color for links on elements that communicate caution. */
+  --life-color-text-link-warning-active: #3f1b01; /* The pressed state link color for information communicating caution. */
+  --life-color-text-link-warning-hover: #572600; /* The hover state link color for information communicating caution. */
+  --life-color-text-on-fill-accent1: #ffffff; /* Use for text on a fill-accent1 background. */
+  --life-color-text-on-fill-accent2: #42300f; /* Use for text on a fill-accent2 background. */
+  --life-color-text-on-fill-critical: #ffffff; /* Use for text on a fill-critical background. */
+  --life-color-text-on-fill-default: #fafafa; /* Use for text on default fill background. */
+  --life-color-text-on-fill-disabled: #b3b3b3; /* Use for text in disabled state on fill backgrounds. */
+  --life-color-text-on-fill-inverse: #262626; /* Use for text on a fill-inverse background. */
+  --life-color-text-on-fill-inverse-disabled: #767676; /* Use for text on a fill-inverse-disabled background. */
+  --life-color-text-on-fill-positive: #ffffff; /* Use for text on a fill-positive background. */
+  --life-color-text-on-fill-primary: #ffffff; /* Use for text on a fill-primary background. */
+  --life-color-text-on-fill-samaritan: #ffffff; /* Use for text on a fill-samaritan background. */
+  --life-color-text-on-fill-warning: #3f1b01; /* Use for text on a fill-warning background. */
+  --life-color-text-positive: #13772a; /* Use for text communicating positive information. */
+  --life-color-text-primary: #276d8b; /* Use for prominent text. */
+  --life-color-text-primary-active: #163746; /* The pressed state color for prominent text. */
+  --life-color-text-primary-hover: #215369; /* The hover state color for prominent text. */
+  --life-color-text-samaritan: #9a429a; /* Use for text related to AI. */
+  --life-color-text-subtle: #666666; /* Use for less prominent text, such as navigation, subtle buttons, and input field labels. */
+  --life-color-text-warning: #ad4b00; /* Use for text communicating caution. */
+  --life-color-accent1-100: #c8eeec;
+  --life-color-accent1-200: #98d8d5;
+  --life-color-accent1-300: #6bc2be;
+  --life-color-accent1-400: #3ea39e;
+  --life-color-accent1-500: #25837e;
+  --life-color-accent1-600: #23716d;
+  --life-color-accent1-700: #145653;
+  --life-color-accent1-800: #0f3937;
+  --life-color-accent1-850: #0c2a28;
+  --life-color-accent1-020: #edfcfb;
+  --life-color-accent1-050: #e4f6f6;
+  --life-color-accent2-100: #f8e2bf;
+  --life-color-accent2-200: #eac785;
+  --life-color-accent2-300: #d6ad61;
+  --life-color-accent2-400: #b58e45;
+  --life-color-accent2-500: #92702f;
+  --life-color-accent2-600: #806128;
+  --life-color-accent2-700: #604920;
+  --life-color-accent2-800: #42300f;
+  --life-color-accent2-850: #2f240f;
+  --life-color-accent2-020: #fffaee;
+  --life-color-accent2-050: #fdf0de;
+  --life-color-alpha-black-0: rgba(26, 26, 26, 0);
+  --life-color-alpha-black-25: rgba(26, 26, 26, 0.25);
+  --life-color-alpha-black-50: rgba(26, 26, 26, 0.5);
+  --life-color-alpha-black-75: rgba(26, 26, 26, 0.75);
+  --life-color-alpha-primary500-75: rgba(46, 127, 161, 0.75);
+  --life-color-alpha-primary700-75: rgba(33, 83, 105, 0.75);
+  --life-color-alpha-white-0: rgba(255, 255, 255, 0);
+  --life-color-alpha-white-25: rgba(255, 255, 255, 0.2);
+  --life-color-alpha-white-50: rgba(255, 255, 255, 0.5);
+  --life-color-alpha-white-75: rgba(255, 255, 255, 0.75);
+  --life-color-base-black: #1a1a1a;
+  --life-color-base-white: #ffffff;
+  --life-color-critical-100: #fddee2;
+  --life-color-critical-200: #fdbac2;
+  --life-color-critical-300: #fd96a4;
+  --life-color-critical-400: #fc5a6f;
+  --life-color-critical-500: #dc3449;
+  --life-color-critical-600: #c32238;
+  --life-color-critical-700: #9c0d1d;
+  --life-color-critical-800: #6b0613;
+  --life-color-critical-850: #461117;
+  --life-color-critical-020: #fef5f7;
+  --life-color-critical-050: #feecf1;
+  --life-color-neutral-100: #e5e5e5;
+  --life-color-neutral-200: #cccccc;
+  --life-color-neutral-300: #b3b3b3;
+  --life-color-neutral-400: #949494;
+  --life-color-neutral-500: #767676;
+  --life-color-neutral-600: #666666;
+  --life-color-neutral-700: #4d4d4d;
+  --life-color-neutral-800: #333333;
+  --life-color-neutral-850: #262626;
+  --life-color-neutral-020: #fafafa;
+  --life-color-neutral-050: #f2f2f2;
+  --life-color-positive-100: #cceed2;
+  --life-color-positive-200: #a0d9ad;
+  --life-color-positive-300: #77c589;
+  --life-color-positive-400: #37a851;
+  --life-color-positive-500: #14892f;
+  --life-color-positive-600: #13772a;
+  --life-color-positive-700: #025a15;
+  --life-color-positive-800: #003d0e;
+  --life-color-positive-850: #062c0f;
+  --life-color-positive-020: #ecfef1;
+  --life-color-positive-050: #e2f8e4;
+  --life-color-primary-100: #d4e9f2;
+  --life-color-primary-200: #a9d3e5;
+  --life-color-primary-300: #7fbcd7;
+  --life-color-primary-400: #519dbd;
+  --life-color-primary-500: #2e7fa1;
+  --life-color-primary-600: #276d8b;
+  --life-color-primary-700: #215369;
+  --life-color-primary-800: #163746;
+  --life-color-primary-850: #0f2934;
+  --life-color-primary-020: #f1fbfe;
+  --life-color-primary-050: #e3f5fc;
+  --life-color-restricted-indigo-100: #e0e6fa;
+  --life-color-restricted-indigo-200: #c1cbec;
+  --life-color-restricted-indigo-300: #a5b2e4;
+  --life-color-restricted-indigo-400: #8091d1;
+  --life-color-restricted-indigo-500: #5f73ba;
+  --life-color-restricted-indigo-600: #5062a5;
+  --life-color-restricted-indigo-700: #384a85;
+  --life-color-restricted-indigo-800: #24315b;
+  --life-color-restricted-indigo-020: #f5f7ff;
+  --life-color-restricted-indigo-050: #f0f3ff;
+  --life-color-restricted-lilac-100: #efdffc;
+  --life-color-restricted-lilac-200: #dbc6ec;
+  --life-color-restricted-lilac-300: #c3aada;
+  --life-color-restricted-lilac-400: #a787c0;
+  --life-color-restricted-lilac-500: #8969a5;
+  --life-color-restricted-lilac-600: #795993;
+  --life-color-restricted-lilac-700: #5b4370;
+  --life-color-restricted-lilac-800: #3e2b4f;
+  --life-color-restricted-lilac-850: #2e203a;
+  --life-color-restricted-lilac-020: #faf4ff;
+  --life-color-restricted-lilac-050: #f8eeff;
+  --life-color-restricted-olive-100: #d9ebc7;
+  --life-color-restricted-olive-200: #bbd5a2;
+  --life-color-restricted-olive-300: #9ebe7e;
+  --life-color-restricted-olive-400: #7d9e5c;
+  --life-color-restricted-olive-500: #5e803c;
+  --life-color-restricted-olive-600: #526f34;
+  --life-color-restricted-olive-700: #3c5423;
+  --life-color-restricted-olive-800: #23390e;
+  --life-color-restricted-olive-020: #f2fde8;
+  --life-color-restricted-olive-050: #e9f7d9;
+  --life-color-restricted-port-100: #f5e0ec;
+  --life-color-restricted-port-200: #ecc1d4;
+  --life-color-restricted-port-300: #e0a3c1;
+  --life-color-restricted-port-400: #c97ca3;
+  --life-color-restricted-port-500: #af5a85;
+  --life-color-restricted-port-600: #9b4b73;
+  --life-color-restricted-port-700: #7a3658;
+  --life-color-restricted-port-800: #53223a;
+  --life-color-restricted-port-020: #fef5fa;
+  --life-color-restricted-port-050: #feeff8;
+  --life-color-restricted-sienna-100: #fbe1db;
+  --life-color-restricted-sienna-200: #f3c2b6;
+  --life-color-restricted-sienna-300: #eaa18f;
+  --life-color-restricted-sienna-400: #d87a63;
+  --life-color-restricted-sienna-500: #bc583f;
+  --life-color-restricted-sienna-600: #a64a33;
+  --life-color-restricted-sienna-700: #803624;
+  --life-color-restricted-sienna-800: #572414;
+  --life-color-restricted-sienna-020: #fff3f0;
+  --life-color-restricted-sienna-050: #ffeeea;
+  --life-color-rqi-blue-100: #daeaf6;
+  --life-color-rqi-blue-200: #aed0ea;
+  --life-color-rqi-blue-300: #85b9e0;
+  --life-color-rqi-blue-400: #509ad3;
+  --life-color-rqi-blue-500: #3682bd;
+  --life-color-rqi-blue-600: #286b9f;
+  --life-color-rqi-blue-700: #1e5076;
+  --life-color-rqi-blue-800: #14354d;
+  --life-color-rqi-blue-850: #0c283c;
+  --life-color-rqi-blue-020: #f7fafd;
+  --life-color-rqi-blue-050: #ebf3fa;
+  --life-color-rqi-red-100: #f4ded6;
+  --life-color-rqi-red-200: #e9bbac;
+  --life-color-rqi-red-300: #df9b88;
+  --life-color-rqi-red-400: #d17965;
+  --life-color-rqi-red-500: #c35443;
+  --life-color-rqi-red-600: #ac3225;
+  --life-color-rqi-red-700: #990000;
+  --life-color-rqi-red-800: #680101;
+  --life-color-rqi-red-850: #540101;
+  --life-color-rqi-red-020: #fdf7f4;
+  --life-color-rqi-red-050: #f9ede7;
+  --life-color-samaritan-100: #fbdbfb;
+  --life-color-samaritan-200: #efbdef;
+  --life-color-samaritan-300: #e29ce2;
+  --life-color-samaritan-400: #cc75cc;
+  --life-color-samaritan-500: #af50af;
+  --life-color-samaritan-600: #9a429a;
+  --life-color-samaritan-700: #773177;
+  --life-color-samaritan-800: #521e52;
+  --life-color-samaritan-850: #401240;
+  --life-color-samaritan-020: #fff5ff;
+  --life-color-samaritan-050: #ffebff;
+  --life-color-warning-100: #fce3cf;
+  --life-color-warning-200: #f8c096;
+  --life-color-warning-300: #f4a162;
+  --life-color-warning-400: #e97116;
+  --life-color-warning-500: #c45402;
+  --life-color-warning-600: #ad4b00;
+  --life-color-warning-700: #803700;
+  --life-color-warning-800: #572600;
+  --life-color-warning-850: #3f1b01;
+  --life-color-warning-020: #fef7f1;
+  --life-color-warning-050: #fdf0e7;
+  --life-mode: light;
+  --life-shadow: rgba(0, 0, 0, 0.15);
+  --life-z-index-1: 1;
+  --life-z-index-2: 2;
+  --life-z-index-3: 3;
+  --life-z-index-4: 4;
+  --life-z-index-5: 5;
+  --life-z-index-10: 1000;
+  --life-z-index-20: 1020;
+  --life-z-index-30: 1030;
+  --life-z-index-40: 1040;
+  --life-z-index-50: 1050;
+  --life-z-index-60: 1060;
+  --life-z-index-70: 1070;
+  --life-z-index-80: 1080;
+  --life-z-index-active: 4; /* Used when a component is changed to active or selected state. */
+  --life-z-index-dropdown: 1000; /* Used by UI components that are revealed when another component is selected, e.g. Dropdown menu. */
+  --life-z-index-fixed: 1030; /* Used to keep an object from moving. */
+  --life-z-index-focus: 5; /* Used when keyboard focus is placed on an object. */
+  --life-z-index-hover: 2; /* Used when hovering a mouse cursor over interactive components. */
+  --life-z-index-modal: 1060; /* Used for content and dialog modals that display in front of everything on a page when opened. */
+  --life-z-index-modal-backdrop: 1040; /* Used behind objects that are opened in front of everything else on a page. */
+  --life-z-index-normal: 1; /* The standard level for most text, images, and UI components on a page. */
+  --life-z-index-offcanvas: 1050; /* Used for objects that move into the view from outside the page, e.g. Side menus. */
+  --life-z-index-popover: 1070; /* Used for any object that provides important feedback to the user, such as Popover and Toast. */
+  --life-z-index-pressed: 3; /* Used when long-pressing on a component. */
+  --life-z-index-sticky: 1020; /* Used to keep an object in view when scrolling on a page. */
+  --life-z-index-tooltip: 1080; /* Used exclusively by the Tooltip component. */
+  --life-border-lg: 3;
+  --life-border-md: 2;
+  --life-border-sm: 1;
+  --life-font-family: Lato;
+  --life-font-weight-bold: Bold;
+  --life-font-weight-italic: Italic;
+  --life-font-weight-regular: Regular;
+  --life-font-weight-semibold: SemiBold;
+  --life-radius-full: 9999;
+  --life-radius-lg: 12;
+  --life-radius-md: 8;
+  --life-radius-none: 0;
+  --life-radius-sm: 4;
+  --life-radius-xl: 16;
+  --life-radius-xs: 2;
+  --life-size-100: 8;
+  --life-size-150: 12;
+  --life-size-200: 16;
+  --life-size-250: 20;
+  --life-size-300: 24;
+  --life-size-350: 28;
+  --life-size-400: 32;
+  --life-size-500: 40;
+  --life-size-600: 48;
+  --life-size-700: 56;
+  --life-size-800: 64;
+  --life-size-900: 72;
+  --life-size-1000: 80;
+  --life-size-1200: 96;
+  --life-size-1400: 112;
+  --life-size-1600: 128;
+  --life-size-025: 2;
+  --life-size-050: 4;
+  --life-space-100: 8;
+  --life-space-150: 12;
+  --life-space-175: 14;
+  --life-space-200: 16;
+  --life-space-250: 20;
+  --life-space-300: 24;
+  --life-space-400: 32;
+  --life-space-500: 40;
+  --life-space-600: 48;
+  --life-space-700: 56;
+  --life-space-800: 64;
+  --life-space-1600: 128;
+  --life-space-025: 2;
+  --life-space-050: 4;
+  --life-space-075: 6;
+}
