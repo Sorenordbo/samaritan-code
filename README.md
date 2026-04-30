@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Samaritan Code
 
-## Getting Started
+A designer-friendly AI coding assistant built on Claude, with native support for the [Life design system](https://www.laerdal.com) by Laerdal Medical.
 
-First, run the development server:
+## What it does
+
+- Chat with Claude about your projects directly in the browser
+- Browse project files and connect live previews
+- Built-in Life component showroom with all `@laerdal/life-react-components` components
+- Detects when Life library updates are available
+- Attach images and files to your messages
+- Dark mode
+- Conversation history saved between sessions
+
+## Requirements
+
+- [Node.js](https://nodejs.org) 18 or later
+- An [Anthropic API key](https://console.anthropic.com)
+
+## Setup
+
+**1. Clone the repo**
+
+```bash
+git clone https://github.com/your-username/samaritan-code.git
+cd samaritan-code
+```
+
+**2. Install dependencies**
+
+```bash
+npm install
+```
+
+**3. Add your API key**
+
+Copy the example env file and add your key:
+
+```bash
+cp .env.example .env.local
+```
+
+Then open `.env.local` and replace `your-api-key-here` with your Anthropic API key from [console.anthropic.com](https://console.anthropic.com).
+
+**4. Run the app**
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Notes
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **File browser and Finder integration** require the app to run locally on your machine — they won't work on a remote server.
+- **Life library update check** — checks npm for `@laerdal/life-react-components` updates and can install them automatically.
+- **Project scanning** — detects local projects in a configurable directory on your machine.
 
-## Learn More
+## Built with
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [Next.js](https://nextjs.org) (App Router)
+- [Anthropic Claude API](https://docs.anthropic.com)
+- [@laerdal/life-react-components](https://www.npmjs.com/package/@laerdal/life-react-components)
+- [styled-components](https://styled-components.com)
+- [react-markdown](https://github.com/remarkjs/react-markdown)
