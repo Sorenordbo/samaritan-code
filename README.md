@@ -12,39 +12,33 @@ A designer-friendly AI coding assistant built on Claude, with native support for
 - Dark mode
 - Conversation history saved between sessions
 
-## Requirements
+## Getting started
 
-- [Node.js](https://nodejs.org) 18 or later
-- An [Anthropic API key](https://console.anthropic.com)
+**1. Install Node.js** (one-time)
+Download and install the LTS version from [nodejs.org](https://nodejs.org).
 
-## Setup
+**2. Clone or download this repo**
+Click the green **Code** button above → **Download ZIP** → unzip it somewhere on your computer.
 
-**1. Clone the repo**
+**3. Double-click `setup.command`**
+This installs everything and walks you through adding your API key. You only need to do this once.
+
+**4. Double-click `start.command` to launch the app**
+From now on, this is all you need. It opens the app in your browser automatically.
+
+> **Getting an API key:** Go to [console.anthropic.com](https://console.anthropic.com), sign up, and create a key under API Keys. The setup script will ask you to paste it in.
+
+---
+
+## For developers
+
+If you prefer the terminal:
 
 ```bash
-git clone https://github.com/your-username/samaritan-code.git
+git clone https://github.com/Sorenordbo/samaritan-code.git
 cd samaritan-code
-```
-
-**2. Install dependencies**
-
-```bash
 npm install
-```
-
-**3. Add your API key**
-
-Copy the example env file and add your key:
-
-```bash
-cp .env.example .env.local
-```
-
-Then open `.env.local` and replace `your-api-key-here` with your Anthropic API key from [console.anthropic.com](https://console.anthropic.com).
-
-**4. Run the app**
-
-```bash
+cp .env.example .env.local   # then add your API key
 npm run dev
 ```
 
