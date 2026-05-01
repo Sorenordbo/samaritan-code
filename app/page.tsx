@@ -40,6 +40,15 @@ function SamaritanIcon({ size = 20, dark = false }: { size?: number; dark?: bool
   );
 }
 
+/* ── Samaritan system icon (for chat animation) ── */
+function SamaritanSystemIcon({ size = 16, color = "#5E5E5E" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fillRule="evenodd" clipRule="evenodd" d="M12.0389 11.2507C12.0285 11.2616 12.0179 11.2723 12.0072 11.283L9.29954 13.9907C8.58199 14.7083 7.41861 14.7083 6.70107 13.9907L2.34345 9.63311C0.781351 8.07102 0.78135 5.53836 2.34345 3.97626C3.90544 2.41427 6.43788 2.41417 8 3.97596C9.56212 2.41416 12.0946 2.41426 13.6566 3.97626C15.2186 5.53836 15.2186 8.07102 13.6566 9.63311L12.0389 11.2507ZM8.94311 4.91907L6.98538 6.8768C6.59486 7.26732 6.59486 7.90049 6.98538 8.29101C7.37591 8.68154 8.00907 8.68154 8.3996 8.29101L8.70741 7.9832C9.61863 7.07198 11.096 7.07198 12.0072 7.9832C12.2602 8.23613 12.4429 8.53268 12.5554 8.84863L12.7137 8.6903C13.7551 7.64891 13.7551 5.96047 12.7137 4.91907C11.6724 3.87777 9.98453 3.87797 8.94311 4.91907ZM11.0851 10.319L10.308 11.0961C10.3022 11.1018 10.2966 11.1076 10.2912 11.1135L8.35673 13.0479C8.15988 13.2448 7.84072 13.2448 7.64388 13.0479L3.28626 8.69031C2.24486 7.64891 2.24486 5.96047 3.28626 4.91907C4.32765 3.87767 6.01609 3.87767 7.05749 4.91907L6.04257 5.93399C5.13135 6.84521 5.13135 8.3226 6.04257 9.23382C6.9538 10.145 8.43118 10.145 9.34241 9.23382L9.65022 8.92601C10.0407 8.53548 10.6739 8.53548 11.0644 8.92601C11.4479 9.30953 11.4548 9.92705 11.0851 10.319Z" fill={color}/>
+    </svg>
+  );
+}
+
 /* ── Send icon (Life System icon — hardcoded until added to @laerdal/life-react-components) ── */
 function SendIcon({ size = 18 }: { size?: number }) {
   return (
@@ -90,7 +99,10 @@ export default function Home() {
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
   const [portInputValue, setPortInputValue] = useState("");
   const [previewKey, setPreviewKey] = useState(0);
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(() => {
+    if (typeof window !== "undefined") return localStorage.getItem("sc-dark") === "1";
+    return false;
+  });
   const [buildWithLife, setBuildWithLife] = useState(true);
   const [chatPanelWidth, setChatPanelWidth] = useState(340);
   const [lifeUpdate, setLifeUpdate] = useState<{ latest: string; installed: string } | null>(null);
@@ -377,7 +389,7 @@ export default function Home() {
           <AppIconButton onClick={() => window.location.href = "/design-system"} title="Life Design System">
             <SystemIcons.Legend size="16" color="currentColor" />
           </AppIconButton>
-          <AppIconButton onClick={() => setDarkMode((d) => !d)} title={darkMode ? "Switch to light mode" : "Switch to dark mode"}>
+          <AppIconButton onClick={() => setDarkMode((d) => { localStorage.setItem("sc-dark", d ? "0" : "1"); return !d; })} title={darkMode ? "Switch to light mode" : "Switch to dark mode"}>
             {darkMode ? <SunIcon size={16} /> : <MoonIcon size={16} />}
           </AppIconButton>
           {!sidebarOpen && (
@@ -394,6 +406,7 @@ export default function Home() {
           background: "#d4e9f2", borderBottom: "1px solid #a9d3e5",
           padding: "7px 20px", display: "flex", alignItems: "center", gap: 10,
           fontSize: 13, fontFamily: "'Lato', sans-serif", color: "#215369", flexShrink: 0,
+          position: "relative", zIndex: 15,
         }}>
           <SystemIcons.Information size="15" />
           <span>
@@ -488,7 +501,7 @@ export default function Home() {
                       dark={darkMode}
                       showLabel={displayMessages.length === 0 || displayMessages[displayMessages.length - 1]?.role === "user"}
                     />
-                  ) : !toolActivity && <ThinkingDots />}
+                  ) : !toolActivity && <ThinkingDots dark={darkMode} />}
                 </div>
               )}
               <div ref={messagesEndRef} />
@@ -628,6 +641,82 @@ export default function Home() {
   );
 }
 
+/* ── Plus menu (attach / apply Life) ── */
+function PlusMenu({ dark, onAttach, onApplyLife }: { dark?: boolean; onAttach: () => void; onApplyLife: () => void }) {
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!open) return;
+    const handler = (e: MouseEvent) => { if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false); };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, [open]);
+
+  const menuBg = dark ? "#2A2A2E" : "#ffffff";
+  const menuBorder = dark ? "#3A3A40" : "#E8E8EE";
+  const itemHoverBg = dark ? "#35353A" : "#F5F5F5";
+  const textColor = dark ? "#F0F0F0" : "#1A1A1A";
+  const mutedColor = dark ? "#888" : "#888";
+
+  return (
+    <div ref={ref} style={{ position: "relative", marginLeft: -8 }}>
+      <AppIconButton onClick={() => setOpen(o => !o)} title="More options">
+        <SystemIcons.Add size="20" color="currentColor" />
+      </AppIconButton>
+      {open && (
+        <div style={{
+          position: "absolute", bottom: "calc(100% + 8px)", left: 0,
+          background: menuBg, border: `1px solid ${menuBorder}`,
+          borderRadius: 10, boxShadow: "0 4px 20px rgba(0,0,0,0.15)",
+          minWidth: 210, zIndex: 100, overflow: "hidden",
+        }}>
+          <MenuItem
+            icon={<SystemIcons.Attachment size="16" color={mutedColor} />}
+            label="Attach file"
+            description="Images, code, documents"
+            textColor={textColor} hoverBg={itemHoverBg}
+            onClick={() => { onAttach(); setOpen(false); }}
+          />
+          <div style={{ height: 1, background: menuBorder }} />
+          <MenuItem
+            icon={<SystemIcons.Legend size="16" color={mutedColor} />}
+            label="Apply Life design system"
+            description="Ask Samaritan to migrate this project"
+            textColor={textColor} hoverBg={itemHoverBg}
+            onClick={() => { onApplyLife(); setOpen(false); }}
+          />
+        </div>
+      )}
+    </div>
+  );
+}
+
+function MenuItem({ icon, label, description, textColor, hoverBg, onClick }: {
+  icon: React.ReactNode; label: string; description: string;
+  textColor: string; hoverBg: string; onClick: () => void;
+}) {
+  const [hover, setHover] = useState(false);
+  return (
+    <button
+      onClick={onClick}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+      style={{
+        display: "flex", alignItems: "center", gap: 10, width: "100%",
+        padding: "10px 14px", border: "none", background: hover ? hoverBg : "transparent",
+        cursor: "pointer", textAlign: "left", transition: "background 0.1s",
+      }}
+    >
+      <span style={{ flexShrink: 0 }}>{icon}</span>
+      <span style={{ display: "flex", flexDirection: "column", gap: 1 }}>
+        <span style={{ fontSize: 13, fontWeight: 600, color: textColor, fontFamily: "'Lato', sans-serif" }}>{label}</span>
+        <span style={{ fontSize: 11, color: "#888", fontFamily: "'Lato', sans-serif" }}>{description}</span>
+      </span>
+    </button>
+  );
+}
+
 /* ── Gradient input ── */
 function GradientInput({ value, onChange, onSend, onStop, streaming, disabled, placeholder, textareaRef, onKeyDown, compact, dark, attachments, onAttachmentsChange }: {
   value: string; onChange: (v: string) => void; onSend: () => void; onStop?: () => void;
@@ -714,11 +803,22 @@ function GradientInput({ value, onChange, onSend, onStop, streaming, disabled, p
             style={{ display: "none" }}
             onChange={(e) => e.target.files && handleFiles(e.target.files)}
           />
-          <div style={{ marginLeft: -8 }}>
-            <AppIconButton onClick={() => fileInputRef.current?.click()} title="Attach files">
-              <SystemIcons.Attachment size="20" color="currentColor" />
-            </AppIconButton>
-          </div>
+          {compact ? (
+            <PlusMenu
+              dark={dark}
+              onAttach={() => fileInputRef.current?.click()}
+              onApplyLife={() => {
+                onChange("Please apply the Life design system (@laerdal/life-react-components) to this project. Replace custom UI elements with Life components, use Life design tokens for colors, spacing and typography, and follow Life component patterns throughout.");
+                setTimeout(() => textareaRef.current?.focus(), 0);
+              }}
+            />
+          ) : (
+            <div style={{ marginLeft: -8 }}>
+              <AppIconButton onClick={() => fileInputRef.current?.click()} title="Attach files">
+                <SystemIcons.Attachment size="20" color="currentColor" />
+              </AppIconButton>
+            </div>
+          )}
           <div style={{ marginRight: -16 }}>
             <IconButton
               action={streaming ? (onStop ?? (() => {})) : onSend}
@@ -758,8 +858,13 @@ function ChatMessage({ role, content, streaming, dark, showLabel }: { role: stri
         {isUser ? (
           <span style={{ whiteSpace: "pre-wrap" }}>{content}</span>
         ) : (
-          <div className="markdown">
-            <ReactMarkdown remarkPlugins={[remarkGfm]}>{content + (streaming ? "▋" : "")}</ReactMarkdown>
+          <div className="markdown" style={{ position: "relative" }}>
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
+            {streaming && (
+              <span style={{ display: "inline-flex", verticalAlign: "middle", marginLeft: 4, animation: "sam-pulse 0.6s cubic-bezier(0.4, 0, 0.6, 1) infinite" }}>
+                <SamaritanSystemIcon size={14} color={dark ? "#999" : "#5E5E5E"} />
+              </span>
+            )}
           </div>
         )}
       </div>
@@ -967,12 +1072,12 @@ function InfoTip({ text }: { text: string }) {
   );
 }
 
-function ThinkingDots() {
+function ThinkingDots({ dark }: { dark?: boolean }) {
   return (
-    <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 16, paddingLeft: 20 }}>
-      {[0, 1, 2].map((i) => (
-        <div key={i} style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--sc-border)", animation: `bounce 1.2s ${i * 0.18}s ease-in-out infinite` }} />
-      ))}
+    <div style={{ display: "flex", alignItems: "center", marginBottom: 16 }}>
+      <span style={{ display: "inline-flex", animation: "sam-pulse 0.6s cubic-bezier(0.4, 0, 0.6, 1) infinite" }}>
+        <SamaritanSystemIcon size={22} color={dark ? "#999" : "#5E5E5E"} />
+      </span>
     </div>
   );
 }

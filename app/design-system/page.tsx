@@ -2,6 +2,54 @@
 import { useState, useEffect } from "react";
 import { ThemeProvider } from "styled-components";
 
+function MoonIcon({ size = 16 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none">
+      <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  );
+}
+function SunIcon({ size = 16 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none">
+      <circle cx="12" cy="12" r="5" stroke="currentColor" strokeWidth="2"/>
+      <line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+      <line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+      <line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+      <line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+    </svg>
+  );
+}
+
+function DSIconButton({ onClick, title, children, dark }: { onClick: () => void; title: string; children: React.ReactNode; dark?: boolean }) {
+  const [hover, setHover] = useState(false);
+  return (
+    <button
+      onClick={onClick}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+      title={title}
+      style={{
+        width: 48, height: 48, borderRadius: "50%", border: "none", cursor: "pointer",
+        background: "transparent", color: hover ? (dark ? "#7fbcd7" : "#215369") : (dark ? "#999" : "#949494"),
+        display: "flex", alignItems: "center", justifyContent: "center",
+        transition: "color 0.15s", flexShrink: 0, padding: 0, position: "relative",
+      }}
+    >
+      <span style={{
+        position: "absolute", width: 36, height: 36, borderRadius: "50%",
+        background: hover ? (dark ? "#163746" : "#d4e9f2") : "transparent",
+        transition: "background 0.15s",
+      }} />
+      <span style={{ position: "relative", display: "flex" }}>{children}</span>
+    </button>
+  );
+}
+
 function SamaritanIcon({ size = 20 }: { size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none">
@@ -216,6 +264,10 @@ export default function DesignSystemPage() {
   const [taVal, setTaVal] = useState("");
   const [lifeUpdate, setLifeUpdate] = useState<{ installed: string; latest: string } | null>(null);
   const [lifeUpdating, setLifeUpdating] = useState(false);
+  const [darkMode, setDarkMode] = useState(() => {
+    if (typeof window !== "undefined") return localStorage.getItem("sc-dark") === "1";
+    return false;
+  });
 
   useEffect(() => {
     fetch("/api/life-update").then(r => r.json()).then(d => {
@@ -230,18 +282,27 @@ export default function DesignSystemPage() {
   return (
     <ThemeProvider theme={{}}>
     <ToastProvider>
-      <div style={{ minHeight: "100vh", background: "#F5F5F5", fontFamily: "Lato, sans-serif" }}>
+      <div style={{ minHeight: "100vh", background: darkMode ? "#111113" : "#F5F5F5", fontFamily: "Lato, sans-serif" }}>
 
         {/* Header — matches main app */}
         <header style={{
           height: 60, flexShrink: 0,
-          background: "#ffffff", borderBottom: "1px solid #E8E8EE",
+          background: darkMode ? "#1C1C1F" : "#ffffff", borderBottom: `1px solid ${darkMode ? "#2E2E33" : "#E8E8EE"}`,
           display: "flex", alignItems: "center", padding: "0 20px", gap: 8,
           position: "sticky", top: 0, zIndex: 20,
         }}>
           <SamaritanIcon size={20} />
-          <span style={{ fontWeight: 700, fontSize: 14, color: "#1A1A1A", letterSpacing: "-0.1px" }}>Samaritan Code</span>
-          <span style={{ fontWeight: 400, fontSize: 14, color: "#888", fontFamily: "'Lato', sans-serif" }}>– build with Life</span>
+          <span style={{ fontWeight: 700, fontSize: 14, color: darkMode ? "#F0F0F0" : "#1A1A1A", letterSpacing: "-0.1px" }}>Samaritan Code</span>
+          <span style={{ fontWeight: 400, fontSize: 14, color: darkMode ? "#999" : "#888", fontFamily: "'Lato', sans-serif" }}>– build with Life</span>
+          <div style={{ marginLeft: "auto" }}>
+            <DSIconButton
+              onClick={() => setDarkMode(d => { localStorage.setItem("sc-dark", d ? "0" : "1"); return !d; })}
+              title={darkMode ? "Switch to light mode" : "Switch to dark mode"}
+              dark={darkMode}
+            >
+              {darkMode ? <SunIcon size={16} /> : <MoonIcon size={16} />}
+            </DSIconButton>
+          </div>
         </header>
 
         {/* Life update notice — persistent, no close */}
